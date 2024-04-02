@@ -1,44 +1,33 @@
 import os
 import music21 as m21
-m21.configure.run()
 
 KERN_DATASET_PATH = "deutschl/test"
 
 def load_songs(data_path):
-    
     songs = []
-    
-    #go through all files in data set and load them with music21
+    # Go through all files in the dataset and load them with music21
     for path, subdirs, files in os.walk(data_path):
         for file in files:
-            if file[-3:] == "krn":
+            if file.endswith(".krn"):
                 song = m21.converter.parse(os.path.join(path, file))
                 songs.append(song)
     return songs
-                
-    
 
-
-
-
-def preprocess(data_path):
-    pass
-    #load songs
+def preprocess(data_path, output_dir):
+    # Load songs
     print("Loading songs...")
     songs = load_songs(data_path)
     print(f"Loaded {len(songs)} songs.")
     
-    
-    #filter out songs with non-acceptable duration
-    
-    #transpose to C major
-    
-    #encode songs with music time series representation
-    
-    #save songs to text file
-    
+    # Save songs as MusicXML files
+    for i, song in enumerate(songs):
+        output_file = os.path.join(output_dir, f"song_{i}.xml")
+        song.write('xml', output_file)
+
+    print(f"MusicXML files saved to {output_dir}")
+
 if __name__ == "__main__":
-    songs = load_songs(KERN_DATASET_PATH)
-    print(f'Loaded {len(songs)} songs.')
-    song = songs[0]
-    song.show()
+    OUTPUT_DIR = "output_musicxml"
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    print("Starting preprocessing...")
+    preprocess(KERN_DATASET_PATH, OUTPUT_DIR)
