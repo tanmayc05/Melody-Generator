@@ -5,6 +5,7 @@ KERN_DATASET_PATH = "deutschl/test" # path to the dataset
 SAVE_DIR = "dataset" # text files of encoded songs
 OUTPUT_DIR = "output_musicxml" # for manually testing xml files
 ACCEPTABLE_DURATIONS = [0.25, 0.5, 0.75, 1.0, 1.5, 2, 3, 4] # in quarter length
+SEQUENCE_LENGTH = 64
  
 def load_songs(data_path):
     songs = []
@@ -84,9 +85,21 @@ def preprocess(data_path, output_dir):
         output_file = os.path.join(output_dir, f"song_{i}.xml")
         song.write('xml', output_file)
             
-        
-
+def merge_dataset_to_file(dataset_path, file_path):
+    # Merge all songs into a single file
+    new_song_delimiter = "/ " * SEQUENCE_LENGTH
+    songs = ""
+    for path, subdirs, files in os.walk(dataset_path):
+        for file in files:
+            with open(os.path.join(path, file), "r") as f:
+                song = f.read()
+                songs += song + " " + new_song_delimiter
+    songs = songs[:-1]
+    
+    with open(file_path, "w") as file:
+        file.write(songs)
+    return songs
 if __name__ == "__main__":
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
     print("Starting preprocessing...")
     preprocess(KERN_DATASET_PATH, OUTPUT_DIR)
+    
