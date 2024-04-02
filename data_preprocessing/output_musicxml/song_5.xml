@@ -27,21 +27,21 @@
     </scaling>
   </defaults>
   <part-list>
-    <score-part id="Paf7d8567bb19f1bd9a10e0675d58e95e">
+    <score-part id="P88afb25f71aa8001bf5dd209e841f133">
       <part-name>Voice</part-name>
       <part-abbreviation>V</part-abbreviation>
-      <score-instrument id="I8876ea3eb30e17eeb6d4d902787b9459">
+      <score-instrument id="I647e78408769defe709a9806a7b21b8f">
         <instrument-name>Voice</instrument-name>
         <instrument-abbreviation>V</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I8876ea3eb30e17eeb6d4d902787b9459">
+      <midi-instrument id="I647e78408769defe709a9806a7b21b8f">
         <midi-channel>1</midi-channel>
         <midi-program>54</midi-program>
       </midi-instrument>
     </score-part>
   </part-list>
   <!--=========================== Part 1 ===========================-->
-  <part id="Paf7d8567bb19f1bd9a10e0675d58e95e">
+  <part id="P88afb25f71aa8001bf5dd209e841f133">
     <!--========================= Measure 0 ==========================-->
     <measure implicit="no" number="0">
       <attributes>
@@ -60,7 +60,7 @@
           <octave>5</octave>
         </pitch>
         <duration>15120</duration>
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>quarter</type>
         <dot />
       </note>
@@ -71,7 +71,7 @@
         </pitch>
         <duration>15120</duration>
         <tie type="start" />
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>quarter</type>
         <dot />
         <notations>
@@ -85,7 +85,7 @@
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>eighth</type>
         <notations>
           <tied type="stop" />
@@ -97,7 +97,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>eighth</type>
       </note>
       <note>
@@ -106,7 +106,7 @@
           <octave>5</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>eighth</type>
       </note>
       <note>
@@ -115,7 +115,7 @@
           <octave>5</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>eighth</type>
       </note>
       <note>
@@ -124,7 +124,7 @@
           <octave>5</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>eighth</type>
       </note>
       <note>
@@ -133,7 +133,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>eighth</type>
       </note>
     </measure>
@@ -145,7 +145,7 @@
           <octave>5</octave>
         </pitch>
         <duration>15120</duration>
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>quarter</type>
         <dot />
       </note>
@@ -156,7 +156,7 @@
         </pitch>
         <duration>15120</duration>
         <tie type="start" />
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>quarter</type>
         <dot />
         <notations>
@@ -170,7 +170,7 @@
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>eighth</type>
         <notations>
           <tied type="stop" />
@@ -182,7 +182,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>eighth</type>
       </note>
       <note>
@@ -191,7 +191,7 @@
           <octave>5</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>eighth</type>
       </note>
       <note>
@@ -200,7 +200,7 @@
           <octave>5</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>eighth</type>
       </note>
       <note>
@@ -209,7 +209,7 @@
           <octave>5</octave>
         </pitch>
         <duration>7560</duration>
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>eighth</type>
         <dot />
       </note>
@@ -219,7 +219,7 @@
           <octave>4</octave>
         </pitch>
         <duration>2520</duration>
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>16th</type>
       </note>
       <barline location="right">
@@ -234,7 +234,7 @@
           <octave>4</octave>
         </pitch>
         <duration>15120</duration>
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>quarter</type>
         <dot />
       </note>
@@ -245,7 +245,7 @@
         </pitch>
         <duration>15120</duration>
         <tie type="start" />
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>quarter</type>
         <dot />
         <notations>
@@ -259,7 +259,7 @@
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>eighth</type>
         <notations>
           <tied type="stop" />
@@ -271,7 +271,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>eighth</type>
       </note>
       <note>
@@ -280,7 +280,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>eighth</type>
       </note>
       <note>
@@ -289,7 +289,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>eighth</type>
       </note>
       <note>
@@ -298,7 +298,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>eighth</type>
       </note>
       <note>
@@ -307,7 +307,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>eighth</type>
       </note>
       <barline location="right">
@@ -323,7 +323,7 @@
         </pitch>
         <duration>30240</duration>
         <tie type="start" />
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>half</type>
         <dot />
         <notations>
@@ -337,7 +337,7 @@
         </pitch>
         <duration>15120</duration>
         <tie type="stop" />
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>quarter</type>
         <dot />
         <notations>
@@ -350,7 +350,7 @@
           <octave>4</octave>
         </pitch>
         <duration>10080</duration>
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>quarter</type>
       </note>
       <note>
@@ -359,7 +359,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>eighth</type>
       </note>
       <barline location="right">
@@ -374,7 +374,7 @@
           <octave>4</octave>
         </pitch>
         <duration>15120</duration>
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>quarter</type>
         <dot />
       </note>
@@ -384,7 +384,7 @@
           <octave>4</octave>
         </pitch>
         <duration>10080</duration>
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>quarter</type>
       </note>
       <note>
@@ -393,7 +393,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>eighth</type>
       </note>
       <note>
@@ -402,7 +402,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>eighth</type>
       </note>
       <note>
@@ -411,7 +411,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>eighth</type>
       </note>
       <note>
@@ -420,7 +420,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>eighth</type>
       </note>
       <note>
@@ -429,7 +429,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>eighth</type>
       </note>
       <barline location="right">
@@ -444,7 +444,7 @@
           <octave>5</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>eighth</type>
       </note>
       <note>
@@ -453,7 +453,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>eighth</type>
       </note>
       <note>
@@ -462,7 +462,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>eighth</type>
       </note>
       <note>
@@ -472,7 +472,7 @@
         </pitch>
         <duration>15120</duration>
         <tie type="start" />
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>quarter</type>
         <dot />
         <notations>
@@ -486,7 +486,7 @@
         </pitch>
         <duration>15120</duration>
         <tie type="stop" />
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>quarter</type>
         <dot />
         <notations>
@@ -499,7 +499,7 @@
           <octave>4</octave>
         </pitch>
         <duration>10080</duration>
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>quarter</type>
       </note>
       <note>
@@ -508,7 +508,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>eighth</type>
       </note>
       <barline location="right">
@@ -524,7 +524,7 @@
         </pitch>
         <duration>15120</duration>
         <tie type="start" />
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>quarter</type>
         <dot />
         <notations>
@@ -538,7 +538,7 @@
         </pitch>
         <duration>15120</duration>
         <tie type="start" />
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>quarter</type>
         <dot />
         <notations>
@@ -552,7 +552,7 @@
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>quarter</type>
         <notations>
           <tied type="stop" />
@@ -564,7 +564,7 @@
           <octave>3</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>eighth</type>
       </note>
       <note>
@@ -573,7 +573,7 @@
           <octave>3</octave>
         </pitch>
         <duration>10080</duration>
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>quarter</type>
       </note>
       <note>
@@ -582,7 +582,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>eighth</type>
       </note>
       <barline location="right">
@@ -597,7 +597,7 @@
           <octave>4</octave>
         </pitch>
         <duration>30240</duration>
-        <instrument id="I8876ea3eb30e17eeb6d4d902787b9459" />
+        <instrument id="I647e78408769defe709a9806a7b21b8f" />
         <type>half</type>
         <dot />
       </note>

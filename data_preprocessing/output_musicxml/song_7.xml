@@ -28,21 +28,21 @@
     </scaling>
   </defaults>
   <part-list>
-    <score-part id="Pbbdc257d7c2766c2f5fa55daf494c892">
+    <score-part id="P1584ba804b63057c4f1cc2c1f114f018">
       <part-name>Voice</part-name>
       <part-abbreviation>V</part-abbreviation>
-      <score-instrument id="I16959e852fc37cb51e4c708d94e88551">
+      <score-instrument id="Ia86610c22f3d45b82564f52214d4bcc5">
         <instrument-name>Voice</instrument-name>
         <instrument-abbreviation>V</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I16959e852fc37cb51e4c708d94e88551">
+      <midi-instrument id="Ia86610c22f3d45b82564f52214d4bcc5">
         <midi-channel>1</midi-channel>
         <midi-program>54</midi-program>
       </midi-instrument>
     </score-part>
   </part-list>
   <!--=========================== Part 1 ===========================-->
-  <part id="Pbbdc257d7c2766c2f5fa55daf494c892">
+  <part id="P1584ba804b63057c4f1cc2c1f114f018">
     <!--========================= Measure 0 ==========================-->
     <measure implicit="no" number="0">
       <attributes>
@@ -61,7 +61,7 @@
           <octave>3</octave>
         </pitch>
         <duration>10080</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>quarter</type>
       </note>
     </measure>
@@ -73,7 +73,7 @@
           <octave>4</octave>
         </pitch>
         <duration>10080</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>quarter</type>
       </note>
       <note>
@@ -82,7 +82,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>eighth</type>
         <beam number="1">begin</beam>
       </note>
@@ -92,7 +92,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>eighth</type>
         <beam number="1">end</beam>
       </note>
@@ -102,7 +102,7 @@
           <octave>4</octave>
         </pitch>
         <duration>10080</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>quarter</type>
       </note>
       <note>
@@ -111,7 +111,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>eighth</type>
         <beam number="1">begin</beam>
       </note>
@@ -121,7 +121,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>eighth</type>
         <beam number="1">end</beam>
       </note>
@@ -137,7 +137,7 @@
           <octave>4</octave>
         </pitch>
         <duration>15120</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>quarter</type>
         <dot />
       </note>
@@ -147,7 +147,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>eighth</type>
       </note>
       <note>
@@ -156,7 +156,7 @@
           <octave>4</octave>
         </pitch>
         <duration>10080</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>quarter</type>
       </note>
       <note>
@@ -165,7 +165,7 @@
           <octave>3</octave>
         </pitch>
         <duration>10080</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>quarter</type>
       </note>
       <barline location="right">
@@ -180,7 +180,7 @@
           <octave>4</octave>
         </pitch>
         <duration>10080</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>quarter</type>
       </note>
       <note>
@@ -189,7 +189,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>eighth</type>
         <beam number="1">begin</beam>
       </note>
@@ -199,7 +199,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>eighth</type>
         <beam number="1">end</beam>
       </note>
@@ -209,7 +209,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>eighth</type>
         <beam number="1">begin</beam>
       </note>
@@ -219,7 +219,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>eighth</type>
         <beam number="1">end</beam>
       </note>
@@ -229,7 +229,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>eighth</type>
         <beam number="1">begin</beam>
       </note>
@@ -239,7 +239,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>eighth</type>
         <beam number="1">end</beam>
       </note>
@@ -255,7 +255,7 @@
           <octave>4</octave>
         </pitch>
         <duration>10080</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>quarter</type>
       </note>
       <note>
@@ -264,7 +264,7 @@
           <octave>4</octave>
         </pitch>
         <duration>10080</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>quarter</type>
       </note>
       <note>
@@ -278,7 +278,7 @@
           <octave>3</octave>
         </pitch>
         <duration>10080</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>quarter</type>
       </note>
       <barline location="right">
@@ -293,7 +293,7 @@
           <octave>4</octave>
         </pitch>
         <duration>10080</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>quarter</type>
       </note>
       <note>
@@ -302,7 +302,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>eighth</type>
         <beam number="1">begin</beam>
       </note>
@@ -312,7 +312,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>eighth</type>
         <beam number="1">end</beam>
       </note>
@@ -322,7 +322,7 @@
           <octave>4</octave>
         </pitch>
         <duration>10080</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>quarter</type>
       </note>
       <note>
@@ -331,7 +331,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>eighth</type>
         <beam number="1">begin</beam>
       </note>
@@ -341,7 +341,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>eighth</type>
         <beam number="1">end</beam>
       </note>
@@ -357,7 +357,7 @@
           <octave>4</octave>
         </pitch>
         <duration>20160</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>half</type>
       </note>
       <note>
@@ -366,7 +366,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>eighth</type>
         <beam number="1">begin</beam>
       </note>
@@ -376,7 +376,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>eighth</type>
         <beam number="1">end</beam>
       </note>
@@ -386,7 +386,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>eighth</type>
         <beam number="1">begin</beam>
       </note>
@@ -396,7 +396,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>eighth</type>
         <beam number="1">end</beam>
       </note>
@@ -412,7 +412,7 @@
           <octave>4</octave>
         </pitch>
         <duration>10080</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>quarter</type>
       </note>
       <note>
@@ -421,7 +421,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>eighth</type>
         <beam number="1">begin</beam>
       </note>
@@ -431,7 +431,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>eighth</type>
         <beam number="1">end</beam>
       </note>
@@ -441,7 +441,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>eighth</type>
         <beam number="1">begin</beam>
       </note>
@@ -451,7 +451,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>eighth</type>
         <beam number="1">end</beam>
       </note>
@@ -461,7 +461,7 @@
           <octave>4</octave>
         </pitch>
         <duration>10080</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>quarter</type>
       </note>
       <barline location="right">
@@ -476,7 +476,7 @@
           <octave>4</octave>
         </pitch>
         <duration>20160</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>half</type>
       </note>
       <note>
@@ -485,7 +485,7 @@
           <octave>4</octave>
         </pitch>
         <duration>10080</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>quarter</type>
       </note>
       <note>
@@ -494,7 +494,7 @@
           <octave>4</octave>
         </pitch>
         <duration>10080</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>quarter</type>
       </note>
       <barline location="right">
@@ -509,7 +509,7 @@
           <octave>4</octave>
         </pitch>
         <duration>10080</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>quarter</type>
       </note>
       <note>
@@ -518,7 +518,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>eighth</type>
         <beam number="1">begin</beam>
       </note>
@@ -528,7 +528,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>eighth</type>
         <beam number="1">end</beam>
       </note>
@@ -538,7 +538,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>eighth</type>
         <beam number="1">begin</beam>
       </note>
@@ -548,7 +548,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>eighth</type>
         <beam number="1">end</beam>
       </note>
@@ -558,7 +558,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>eighth</type>
         <beam number="1">begin</beam>
       </note>
@@ -568,7 +568,7 @@
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>eighth</type>
         <beam number="1">end</beam>
       </note>
@@ -584,7 +584,7 @@
           <octave>4</octave>
         </pitch>
         <duration>20160</duration>
-        <instrument id="I16959e852fc37cb51e4c708d94e88551" />
+        <instrument id="Ia86610c22f3d45b82564f52214d4bcc5" />
         <type>half</type>
       </note>
       <note>
