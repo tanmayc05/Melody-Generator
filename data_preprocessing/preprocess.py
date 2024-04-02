@@ -1,8 +1,10 @@
 import os
 import music21 as m21
 
-KERN_DATASET_PATH = "deutschl/test"
-ACCEPTABLE_DURATIONS = [0.25, 0.5, 0.75, 1.0, 1.5, 2, 3, 4]
+KERN_DATASET_PATH = "deutschl/test" # path to the dataset
+SAVE_DIR = "dataset" # text files of encoded songs
+OUTPUT_DIR = "output_musicxml" # for manually testing xml files
+ACCEPTABLE_DURATIONS = [0.25, 0.5, 0.75, 1.0, 1.5, 2, 3, 4] # in quarter length
  
 def load_songs(data_path):
     songs = []
@@ -36,6 +38,26 @@ def transpose(song):
     transposed_song = song.transpose(interval)
     return transposed_song
 
+def encode_song(song, time_step=0.25):
+    # Convert song into string of characters
+    encoded_song = []
+    for event in song.flat.notesAndRests:
+        # If it's a note
+        if isinstance(event, m21.note.Note):
+            symbol = event.pitch.midi
+        # If it's a rest
+        elif isinstance(event, m21.note.Rest):
+            symbol = "R"
+        steps = int(event.duration.quarterLength / time_step)
+        for step in range(steps):
+            if step == 0:
+                encoded_song.append(symbol)
+            else:
+                encoded_song.append("_")
+    encoded_song = " ".join(map(str, encoded_song))
+    return encoded_song
+
+
 def preprocess(data_path, output_dir):
     # Load songs
     print("Loading songs...")
@@ -50,6 +72,14 @@ def preprocess(data_path, output_dir):
         # Transpose songs to Cmaj/Amin
         song = transpose(song)
         
+        # Encode songs with music21
+        encoded_song = encode_song(song)
+        
+        # Save songs to text file
+        save_path = os.path.join(SAVE_DIR, f"song_{i}.txt")
+        with open(save_path, "w") as file:
+            file.write(encoded_song)
+        
         # Save songs to text file
         output_file = os.path.join(output_dir, f"song_{i}.xml")
         song.write('xml', output_file)
@@ -57,7 +87,6 @@ def preprocess(data_path, output_dir):
         
 
 if __name__ == "__main__":
-    OUTPUT_DIR = "output_musicxml"
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     print("Starting preprocessing...")
     preprocess(KERN_DATASET_PATH, OUTPUT_DIR)
