@@ -2,11 +2,10 @@ import os
 import music21 as m21
 import json
 import keras as keras
-import tensorflow as tf
 import numpy as np
 
-KERN_DATASET_PATH = "deutschl/test" # path to the dataset
-SINGLE_FILE_DATASET = "dataset" # text files of encoded songs
+KERN_DATASET_PATH = "deutschl/altdeu1" # path to the dataset
+ALL_SONGS_DATASET = "dataset" # text files of encoded songs
 OUTPUT_DIR = "output_musicxml" # for manually testing xml files
 MAPPINGS_PATH = "mappings.json" # mappings file
 ACCEPTABLE_DURATIONS = [0.25, 0.5, 0.75, 1.0, 1.5, 2, 3, 4] # in quarter length
@@ -82,7 +81,7 @@ def preprocess(data_path, output_dir):
         encoded_song = encode_song(song)
         
         # Save songs to text file
-        save_path = os.path.join(SINGLE_FILE_DATASET, f"song_{i}.txt")
+        save_path = os.path.join(ALL_SONGS_DATASET, f"song_{i}.txt")
         with open(save_path, "w") as file:
             file.write(encoded_song)
         
@@ -127,9 +126,11 @@ def convert_songs_to_int(songs):
     
     # Convert songs to int
     int_songs = []
-    for song in songs:
-        int_song = [mappings[symbol] for symbol in song.split()]
-        int_songs.append(int_song)
+    
+    songs = songs.split()
+    for symbol in songs:
+        int_songs.append(mappings[symbol])
+        
     return int_songs
 
 def generate_training_sequences(sequence_length):
@@ -144,16 +145,16 @@ def generate_training_sequences(sequence_length):
         network_input.append(int_songs[i:i+sequence_length])
         network_output.append(int_songs[i+sequence_length])
     # one hot encode the sequences
-    vocabulary_size = len(set(songs))
+    vocabulary_size = len(set(int_songs))
     network_input = keras.utils.to_categorical(network_input, num_classes=vocabulary_size)
     network_output = np.array(network_output)
     return network_input, network_output
 
 
 if __name__ == "__main__":
-    preprocess(KERN_DATASET_PATH, OUTPUT_DIR)
+    preprocess(KERN_DATASET_PATH, OUTPUT_DIR) 
     
-    songs = merge_dataset_to_file(SINGLE_FILE_DATASET, "dataset.txt")
+    songs = merge_dataset_to_file(ALL_SONGS_DATASET, "dataset.txt")
     
     create_mapping(songs, MAPPINGS_PATH)
     
