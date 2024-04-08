@@ -4,9 +4,8 @@ import json
 import keras as keras
 import numpy as np
 
-KERN_DATASET_PATH = "Ghosthack_Advent_Calendar_2018_Day_2_-_MIDIs/Melodies" # path to the dataset
+KERN_DATASET_PATH = "Unison Classical MIDI Chord Collection" # path to the dataset
 ALL_SONGS_DATASET = "dataset" # text files of encoded songs
-OUTPUT_DIR = "output_musicxml" # for manually testing xml files
 MAPPINGS_PATH = "mappings.json" # mappings file
 ACCEPTABLE_DURATIONS = [0.25, 0.5, 0.75, 1.0, 1.5, 2, 3, 4] # in quarter length
 SEQUENCE_LENGTH = 64
@@ -14,7 +13,10 @@ SEQUENCE_LENGTH = 64
 def load_songs(data_path):
     songs = []
     # Go through all files in the dataset and load them with music21
+    # if u encounter a file called "individual chords" then dont load it
     for path, subdirs, files in os.walk(data_path):
+        if path or files == "Individual Chords":
+            continue
         for file in files:
             if file.endswith(".krn"):
                 song = m21.converter.parse(os.path.join(path, file))
@@ -72,7 +74,7 @@ def encode_song(song, time_step=0.25):
     return encoded_song
 
 
-def preprocess(data_path, output_dir):
+def preprocess(data_path):
     # Load songs
     print("Loading songs...")
     songs = load_songs(data_path)
@@ -93,10 +95,6 @@ def preprocess(data_path, output_dir):
         save_path = os.path.join(ALL_SONGS_DATASET, f"song_{i}.txt")
         with open(save_path, "w") as file:
             file.write(encoded_song)
-        
-        # Save songs to text file
-        output_file = os.path.join(output_dir, f"song_{i}.xml")
-        song.write('xml', output_file)
             
 def merge_dataset_to_file(dataset_path, file_path):
     # Merge all songs into a single file
@@ -164,7 +162,7 @@ def generate_training_sequences(sequence_length):
 
 
 if __name__ == "__main__":
-    preprocess(KERN_DATASET_PATH, OUTPUT_DIR) 
+    preprocess(KERN_DATASET_PATH) 
     
     songs = merge_dataset_to_file(ALL_SONGS_DATASET, "dataset.txt")
     

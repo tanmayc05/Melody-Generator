@@ -7,7 +7,7 @@ from preprocess import SEQUENCE_LENGTH, MAPPINGS_PATH
 class MelodyGenerator:
     """A class that wraps the LSTM model and offers utilities to generate melodies."""
 
-    def __init__(self, model_path="model.h5"):
+    def __init__(self, model_path="models/model.h5"):
         """Constructor that initialises TensorFlow model"""
 
         self.model_path = model_path
@@ -114,9 +114,24 @@ class MelodyGenerator:
 
                     quarter_length_duration = step_duration * step_counter # 0.25 * 4 = 1
 
-                    # handle rest
+                    # handle chord with rest
                     if start_symbol == "R":
                         m21_event = m21.note.Rest(quarterLength=quarter_length_duration)
+
+                    # handle chord
+                    elif "." in start_symbol:
+                        notes_in_chord = start_symbol.split(".")
+                        notes = []
+                        for current_note in notes_in_chord:
+                            # handle rest within chord
+                            if current_note == "R":
+                                new_note = m21.note.Rest()
+                            else:
+                                new_note = m21.note.Note(int(current_note))
+                            new_note.quarterLength = quarter_length_duration
+                            notes.append(new_note)
+
+                        m21_event = m21.chord.Chord(notes)
 
                     # handle note
                     else:
@@ -140,6 +155,6 @@ class MelodyGenerator:
 if __name__ == "__main__":
     mg = MelodyGenerator()
     seed = "2.5.9 _ _ _ 0.4.7 _ _ _"
-    melody = mg.generate_melody(seed, 500, SEQUENCE_LENGTH, 0.3)
+    melody = mg.generate_melody(seed, 500, SEQUENCE_LENGTH, 0.8)
     print(melody)
     mg.save_melody(melody)

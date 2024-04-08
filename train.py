@@ -3,13 +3,13 @@ from preprocess import generate_training_sequences, SEQUENCE_LENGTH
 import tensorflow as tf
 from tensorflow import keras
 
-OUTPUT_UNITS = 56
+OUTPUT_UNITS = 122
 NUM_UNITS = [256]
 LOSS = "sparse_categorical_crossentropy"
 LEARNING_RATE = 0.001
-EPOCHS = 10
+EPOCHS = 5
 BATCH_SIZE = 64
-SAVED_MODEL_PATH = "model.h5"
+SAVED_MODEL_PATH = "models/model.h5"
 
 def build_model(output_units=OUTPUT_UNITS, num_units=NUM_UNITS, loss=LOSS, learning_rate=LEARNING_RATE):
     # create model arch
