@@ -4,7 +4,7 @@ import json
 import keras as keras
 import numpy as np
 
-KERN_DATASET_PATH = "deutschl/altdeu1" # path to the dataset
+KERN_DATASET_PATH = "Ghosthack_Advent_Calendar_2018_Day_2_-_MIDIs/Melodies" # path to the dataset
 ALL_SONGS_DATASET = "dataset" # text files of encoded songs
 OUTPUT_DIR = "output_musicxml" # for manually testing xml files
 MAPPINGS_PATH = "mappings.json" # mappings file
@@ -19,9 +19,14 @@ def load_songs(data_path):
             if file.endswith(".krn"):
                 song = m21.converter.parse(os.path.join(path, file))
                 songs.append(song)
+            # accept midi files
+            if file.endswith(".mid"):
+                song = m21.converter.parse(os.path.join(path, file))
+                songs.append(song)
     return songs
 
 def has_acceptable_durations(song, acceptable_durations):
+    # account for chords and notes
     for note in song.flat.notesAndRests:
         if note.duration.quarterLength not in acceptable_durations:
             return False
@@ -31,7 +36,7 @@ def transpose(song):
     # Get key from the song
     parts = song.getElementsByClass(m21.stream.Part)
     measures_part0 = parts[0].getElementsByClass(m21.stream.Measure)
-    key = measures_part0[0][4]  # assuming the key signature is the 5th element of the first measure
+    key = measures_part0[0][3]  # assuming the key signature is the 5th element of the first measure
     # Estimate key using music21
     key = song.analyze("key")
     # Get interval for transposition. E.g., Bmaj -> Cmaj
@@ -53,6 +58,10 @@ def encode_song(song, time_step=0.25):
         # If it's a rest
         elif isinstance(event, m21.note.Rest):
             symbol = "R"
+        # If it's a chord
+        else:
+            symbol = ".".join(str(n) for n in event.normalOrder)
+        # Append the encoded symbol
         steps = int(event.duration.quarterLength / time_step)
         for step in range(steps):
             if step == 0:
@@ -138,17 +147,20 @@ def generate_training_sequences(sequence_length):
     songs = open("dataset.txt", "r").read()
     int_songs = convert_songs_to_int(songs)
     
-    # generate the sequences
-    network_input = []
-    network_output = []
-    for i in range(len(int_songs) - sequence_length):
-        network_input.append(int_songs[i:i+sequence_length])
-        network_output.append(int_songs[i+sequence_length])
-    # one hot encode the sequences
+    # generate the training sequences and account for chords
+    inputs = []
+    targets = []
+    num_sequences = len(int_songs) - sequence_length
+    for i in range(num_sequences):
+        inputs.append(int_songs[i:i+sequence_length])
+        targets.append(int_songs[i+sequence_length])
+        
+    # one-hot encode the sequences
     vocabulary_size = len(set(int_songs))
-    network_input = keras.utils.to_categorical(network_input, num_classes=vocabulary_size)
-    network_output = np.array(network_output)
-    return network_input, network_output
+    inputs = keras.utils.to_categorical(inputs, num_classes=vocabulary_size)
+    targets = np.array(targets)
+    
+    return inputs, targets
 
 
 if __name__ == "__main__":

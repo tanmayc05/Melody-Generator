@@ -3,11 +3,11 @@ from preprocess import generate_training_sequences, SEQUENCE_LENGTH
 import tensorflow as tf
 from tensorflow import keras
 
-OUTPUT_UNITS = 36
+OUTPUT_UNITS = 56
 NUM_UNITS = [256]
 LOSS = "sparse_categorical_crossentropy"
 LEARNING_RATE = 0.001
-EPOCHS = 50
+EPOCHS = 10
 BATCH_SIZE = 64
 SAVED_MODEL_PATH = "model.h5"
 

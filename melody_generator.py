@@ -139,8 +139,7 @@ class MelodyGenerator:
 
 if __name__ == "__main__":
     mg = MelodyGenerator()
-    seed = "67 _ 67 _ 67 _ _ 65 64 _ 64 _ 64 _ _"
-    seed2 = "67 _ _ 86 _ _ 65 _ 64 _ 62 _ 60 _ _ _"
-    melody = mg.generate_melody(seed2, 500, SEQUENCE_LENGTH, 0.3)
+    seed = "2.5.9 _ _ _ 0.4.7 _ _ _"
+    melody = mg.generate_melody(seed, 500, SEQUENCE_LENGTH, 0.3)
     print(melody)
     mg.save_melody(melody)
