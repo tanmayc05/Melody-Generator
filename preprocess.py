@@ -15,8 +15,8 @@ def load_songs(data_path):
     # Go through all files in the dataset and load them with music21
     # if u encounter a file called "individual chords" then dont load it
     for path, subdirs, files in os.walk(data_path):
-        if path or files == "Individual Chords":
-            continue
+        if "Individual Chords" in subdirs:
+            subdirs.remove("Individual Chords")
         for file in files:
             if file.endswith(".krn"):
                 song = m21.converter.parse(os.path.join(path, file))

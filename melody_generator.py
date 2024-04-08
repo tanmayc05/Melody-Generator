@@ -3,11 +3,12 @@ import numpy as np
 from tensorflow import keras
 import music21 as m21
 from preprocess import SEQUENCE_LENGTH, MAPPINGS_PATH
+import random
 
 class MelodyGenerator:
     """A class that wraps the LSTM model and offers utilities to generate melodies."""
 
-    def __init__(self, model_path="models/model.h5"):
+    def __init__(self, model_path="models/chord_prog.h5"):
         """Constructor that initialises TensorFlow model"""
 
         self.model_path = model_path
@@ -150,11 +151,20 @@ class MelodyGenerator:
 
         # write the m21 stream to a midi file
         stream.write(format, file_name)
+        
+    def create_random_seed(self):
+        chord_keys = [key for key in self._mappings.keys() if key != "/"]
+    
+        # Choose a random chord key
+        seed = random.choice(chord_keys)
+         
+        return seed
 
 
 if __name__ == "__main__":
     mg = MelodyGenerator()
-    seed = "2.5.9 _ _ _ 0.4.7 _ _ _"
+    # choose random seed from mappings.json
+    seed = mg.create_random_seed()
     melody = mg.generate_melody(seed, 500, SEQUENCE_LENGTH, 0.8)
     print(melody)
     mg.save_melody(melody)
