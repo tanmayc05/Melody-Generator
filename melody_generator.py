@@ -8,7 +8,7 @@ import random
 class MelodyGenerator:
     """A class that wraps the LSTM model and offers utilities to generate melodies."""
 
-    def __init__(self, model_path="models/chord_prog.h5"):
+    def __init__(self, model_path="models/trap_model.h5"):
         """Constructor that initialises TensorFlow model"""
 
         self.model_path = model_path
@@ -164,7 +164,9 @@ class MelodyGenerator:
 if __name__ == "__main__":
     mg = MelodyGenerator()
     # choose random seed from mappings.json
-    seed = mg.create_random_seed()
+    # seed = mg.create_random_seed()
+    seed = "2.5.9 _ _ _ "
     melody = mg.generate_melody(seed, 500, SEQUENCE_LENGTH, 0.8)
+    melody.append("_")
     print(melody)
     mg.save_melody(melody)

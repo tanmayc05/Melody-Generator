@@ -4,7 +4,7 @@ import json
 import keras as keras
 import numpy as np
 
-KERN_DATASET_PATH = "Unison Classical MIDI Chord Collection" # path to the dataset
+KERN_DATASET_PATH = "training_set_2/Trap" # path to the dataset
 ALL_SONGS_DATASET = "dataset" # text files of encoded songs
 MAPPINGS_PATH = "mappings.json" # mappings file
 ACCEPTABLE_DURATIONS = [0.25, 0.5, 0.75, 1.0, 1.5, 2, 3, 4] # in quarter length
