@@ -4,7 +4,7 @@ import json
 import keras as keras
 import numpy as np
 
-KERN_DATASET_PATH = "training_set_2/Trap/Cymatics - Alarm - 127 BPM G Min.mid" # path to the dataset
+KERN_DATASET_PATH = "training_set_1/Unison Classical MIDI Chord Collection" # path to the dataset
 ALL_SONGS_DATASET = "encoded_songs_dataset" # text files of encoded songs
 MAPPINGS_PATH = "mappings.json" # mappings file
 ACCEPTABLE_DURATIONS = [0.25, 0.5, 0.75, 1.0, 1.5, 2, 3, 4] # in quarter length
@@ -14,19 +14,19 @@ def load_songs(data_path):
     songs = []
     # Go through all files in the dataset and load them with music21
     # # if u encounter a file called "individual chords" then dont load it
-    # for path, subdirs, files in os.walk(data_path):
-    #     if "Individual Chords" in subdirs:
-    #         subdirs.remove("Individual Chords")
-    #     for file in files:
-    #         if file.endswith(".krn"):
-    #             song = m21.converter.parse(os.path.join(path, file))
-    #             songs.append(song)
-    #         # accept midi files
-    #         if file.endswith(".mid"):
-    #             song = m21.converter.parse(os.path.join(path, file))
-    #             songs.append(song)
-    songs.append(m21.converter.parse('training_set_2/Trap/Cymatics - Alarm - 127 BPM G Min.mid'))
-    print(songs)
+    for path, subdirs, files in os.walk(data_path):
+        if "Individual Chords" in subdirs:
+            subdirs.remove("Individual Chords")
+        for file in files:
+            if file.endswith(".krn"):
+                song = m21.converter.parse(os.path.join(path, file))
+                songs.append(song)
+            # accept midi files
+            if file.endswith(".mid"):
+                song = m21.converter.parse(os.path.join(path, file))
+                songs.append(song)
+    # songs.append(m21.converter.parse('training_set_2/Trap/Cymatics - Alchemist MIDI - B Min.mid'))
+    # print(songs)
     return songs
 
 def has_acceptable_durations(song, acceptable_durations):
@@ -51,6 +51,22 @@ def transpose(song):
     # Transpose song by calculated interval
     transposed_song = song.transpose(interval)
     return transposed_song
+
+def extract_melody_and_chords(song):
+    # Extract melody and chords from the song
+    # Initialize melody and chords
+    melody = m21.stream.Part()
+    chords = m21.stream.Part()
+    
+    # Get melody and chords notes from the song
+    for element in song.flat:
+        # If the element is a Note
+        if isinstance(element, m21.note.Note):
+            melody.append(element)
+        # If the element is a Chord
+        elif isinstance(element, m21.chord.Chord):
+            chords.append(element)
+    return melody, chords
 
 def encode_song(song, time_step=0.25):
     # Convert song into string of characters
@@ -84,16 +100,14 @@ def preprocess(data_path):
     
     for i, song in enumerate(songs):
         # Filter out songs that have non-acceptable durations
-        # if not has_acceptable_durations(song, ACCEPTABLE_DURATIONS):
-        #     continue
+        if not has_acceptable_durations(song, ACCEPTABLE_DURATIONS):
+            continue
         
         # Transpose songs to Cmaj/Amin
         song = transpose(song)
         
-        # Encode songs with music21
         encoded_song = encode_song(song)
-        print(encoded_song)
-        
+                
         # Save songs to text file
         save_path = os.path.join(ALL_SONGS_DATASET, f"song_{i}.txt")
         with open(save_path, "w") as file:

@@ -8,7 +8,7 @@ import random
 class MelodyGenerator:
     """A class that wraps the LSTM model and offers utilities to generate melodies."""
 
-    def __init__(self, model_path="models/trap_model.h5"):
+    def __init__(self, model_path="models/chord_prog2.h5"):
         """Constructor that initialises TensorFlow model"""
 
         self.model_path = model_path
