@@ -164,8 +164,7 @@ class MelodyGenerator:
 if __name__ == "__main__":
     mg = MelodyGenerator()
     # choose random seed from mappings.json
-    # seed = mg.create_random_seed()
-    seed = "2.5.9 _ _ _ "
+    seed = mg.create_random_seed()
     melody = mg.generate_melody(seed, 500, SEQUENCE_LENGTH, 0.8)
     melody.append("_")
     print(melody)

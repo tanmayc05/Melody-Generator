@@ -4,8 +4,8 @@ import json
 import keras as keras
 import numpy as np
 
-KERN_DATASET_PATH = "training_set_2/Trap" # path to the dataset
-ALL_SONGS_DATASET = "dataset" # text files of encoded songs
+KERN_DATASET_PATH = "training_set_2/Trap/Cymatics - Alarm - 127 BPM G Min.mid" # path to the dataset
+ALL_SONGS_DATASET = "encoded_songs_dataset" # text files of encoded songs
 MAPPINGS_PATH = "mappings.json" # mappings file
 ACCEPTABLE_DURATIONS = [0.25, 0.5, 0.75, 1.0, 1.5, 2, 3, 4] # in quarter length
 SEQUENCE_LENGTH = 64
@@ -13,18 +13,20 @@ SEQUENCE_LENGTH = 64
 def load_songs(data_path):
     songs = []
     # Go through all files in the dataset and load them with music21
-    # if u encounter a file called "individual chords" then dont load it
-    for path, subdirs, files in os.walk(data_path):
-        if "Individual Chords" in subdirs:
-            subdirs.remove("Individual Chords")
-        for file in files:
-            if file.endswith(".krn"):
-                song = m21.converter.parse(os.path.join(path, file))
-                songs.append(song)
-            # accept midi files
-            if file.endswith(".mid"):
-                song = m21.converter.parse(os.path.join(path, file))
-                songs.append(song)
+    # # if u encounter a file called "individual chords" then dont load it
+    # for path, subdirs, files in os.walk(data_path):
+    #     if "Individual Chords" in subdirs:
+    #         subdirs.remove("Individual Chords")
+    #     for file in files:
+    #         if file.endswith(".krn"):
+    #             song = m21.converter.parse(os.path.join(path, file))
+    #             songs.append(song)
+    #         # accept midi files
+    #         if file.endswith(".mid"):
+    #             song = m21.converter.parse(os.path.join(path, file))
+    #             songs.append(song)
+    songs.append(m21.converter.parse('training_set_2/Trap/Cymatics - Alarm - 127 BPM G Min.mid'))
+    print(songs)
     return songs
 
 def has_acceptable_durations(song, acceptable_durations):
@@ -82,14 +84,15 @@ def preprocess(data_path):
     
     for i, song in enumerate(songs):
         # Filter out songs that have non-acceptable durations
-        if not has_acceptable_durations(song, ACCEPTABLE_DURATIONS):
-            continue
+        # if not has_acceptable_durations(song, ACCEPTABLE_DURATIONS):
+        #     continue
         
         # Transpose songs to Cmaj/Amin
         song = transpose(song)
         
         # Encode songs with music21
         encoded_song = encode_song(song)
+        print(encoded_song)
         
         # Save songs to text file
         save_path = os.path.join(ALL_SONGS_DATASET, f"song_{i}.txt")
