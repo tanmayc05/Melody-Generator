@@ -1,5 +1,5 @@
 #import preprocessing functions
-from preprocess import generate_training_sequences, SEQUENCE_LENGTH
+from preprocess import generate_training_sequences, preprocess, TRAINING_SET_PATH, SEQUENCE_LENGTH
 import tensorflow as tf
 from tensorflow import keras
 
@@ -27,17 +27,19 @@ def build_model(output_units=OUTPUT_UNITS, num_units=NUM_UNITS, loss=LOSS, learn
     
 
 def train(output_units=OUTPUT_UNITS, num_units=NUM_UNITS, loss=LOSS, learning_rate=LEARNING_RATE):
+    print("Training model...")
     # generate the training sequences
-    inputs, outputs = generate_training_sequences(SEQUENCE_LENGTH)
+    inputs, outputs, weights = generate_training_sequences(SEQUENCE_LENGTH)
     
     # build the network
     model = build_model(output_units, num_units, loss, learning_rate)
     
     # train the model
-    model.fit(inputs, outputs, epochs=EPOCHS, batch_size=BATCH_SIZE)
+    model.fit(inputs, outputs, epochs=EPOCHS, batch_size=BATCH_SIZE, sample_weight=weights)
     
     # save the model
     model.save(SAVED_MODEL_PATH)
     
 if __name__ == "__main__":
+    preprocess(TRAINING_SET_PATH)
     train()

@@ -1,6 +1,7 @@
 import json
 import numpy as np
-from tensorflow import keras
+# from tensorflow import keras
+import keras
 import music21 as m21
 from preprocess import SEQUENCE_LENGTH, MAPPINGS_PATH
 import random
@@ -8,7 +9,7 @@ import random
 class MelodyGenerator:
     """A class that wraps the LSTM model and offers utilities to generate melodies."""
 
-    def __init__(self, model_path="models/chord_prog2.h5"):
+    def __init__(self, model_path="models/chord_prog3.h5"):
         """Constructor that initialises TensorFlow model"""
 
         self.model_path = model_path

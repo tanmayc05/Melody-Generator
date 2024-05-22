@@ -4,29 +4,35 @@ import json
 import keras as keras
 import numpy as np
 
-KERN_DATASET_PATH = "training_set_1/Unison Classical MIDI Chord Collection" # path to the dataset
+TRAINING_SET_PATH = "training_set_3" # path to the dataset
 ALL_SONGS_DATASET = "encoded_songs_dataset" # text files of encoded songs
 MAPPINGS_PATH = "mappings.json" # mappings file
+RATINGS_PATH = "ratings.json" # ratings file
 ACCEPTABLE_DURATIONS = [0.25, 0.5, 0.75, 1.0, 1.5, 2, 3, 4] # in quarter length
 SEQUENCE_LENGTH = 64
  
+RATINGS = [] # ratings for each song
+ 
 def load_songs(data_path):
     songs = []
-    # Go through all files in the dataset and load them with music21
-    # # if u encounter a file called "individual chords" then dont load it
+    global RATINGS
+    RATINGS = []  # Initialize to empty
+
     for path, subdirs, files in os.walk(data_path):
-        if "Individual Chords" in subdirs:
-            subdirs.remove("Individual Chords")
         for file in files:
-            if file.endswith(".krn"):
-                song = m21.converter.parse(os.path.join(path, file))
-                songs.append(song)
-            # accept midi files
             if file.endswith(".mid"):
+                # Check if in Rated_Generations directory
+                if os.path.basename(path) == 'Rated_Generations':
+                    with open(RATINGS_PATH, "r") as ratings_file:
+                        ratings = json.load(ratings_file)
+                        RATINGS.append(ratings[file])
+                else:
+                    # Assign default rating
+                    RATINGS.append(4)
+
                 song = m21.converter.parse(os.path.join(path, file))
                 songs.append(song)
-    # songs.append(m21.converter.parse('training_set_2/Trap/Cymatics - Alchemist MIDI - B Min.mid'))
-    # print(songs)
+                
     return songs
 
 def has_acceptable_durations(song, acceptable_durations):
@@ -110,7 +116,7 @@ def preprocess(data_path):
                 
         # Save songs to text file
         save_path = os.path.join(ALL_SONGS_DATASET, f"song_{i}.txt")
-        with open(save_path, "w") as file:
+        with open(save_path, "w", encoding="utf-8") as file:
             file.write(encoded_song)
             
 def merge_dataset_to_file(dataset_path, file_path):
@@ -124,7 +130,7 @@ def merge_dataset_to_file(dataset_path, file_path):
                 songs += song + " " + new_song_delimiter
     songs = songs[:-1]
     
-    with open(file_path, "w") as file:
+    with open(file_path, "w", encoding="utf-8") as file:
         file.write(songs)
     return songs
 
@@ -140,7 +146,7 @@ def create_mapping(songs, mappings_file):
         mappings[symbol] = i
     
     # Save the mappings to a JSON file
-    with open(mappings_file, "w") as file:
+    with open(mappings_file, "w", encoding="utf-8") as file:
         json.dump(mappings, file, indent=4)
 
 def convert_songs_to_int(songs):
@@ -158,32 +164,47 @@ def convert_songs_to_int(songs):
     return int_songs
 
 def generate_training_sequences(sequence_length):
-    # load songs and map them to int
+    # Load songs and map them to int
     songs = open("dataset.txt", "r").read()
     int_songs = convert_songs_to_int(songs)
-    
-    # generate the training sequences and account for chords
     inputs = []
     targets = []
-    num_sequences = len(int_songs) - sequence_length
-    for i in range(num_sequences):
-        inputs.append(int_songs[i:i+sequence_length])
-        targets.append(int_songs[i+sequence_length])
+    weights = []
+
+    num_songs = len(RATINGS)
+    song_start_idx = 0
+
+    for song_idx in range(num_songs):
+        int_song = int_songs[song_start_idx:song_start_idx + len(int_songs)]
+        rating = RATINGS[song_idx]
         
-    # one-hot encode the sequences
+        num_sequences = len(int_song) - sequence_length
+        for i in range(num_sequences):
+            inputs.append(int_song[i:i + sequence_length])
+            targets.append(int_song[i + sequence_length])
+            weights.append(rating)
+        
+        song_start_idx += len(int_song)
+    print('One-hot encoding time!')
+    # One-hot encode the sequences
     vocabulary_size = len(set(int_songs))
     inputs = keras.utils.to_categorical(inputs, num_classes=vocabulary_size)
     targets = np.array(targets)
+    weights = np.array(weights)
     
-    return inputs, targets
+    print('One-hot encoding done!')
+    print('Inputs shape:', inputs.shape)
+    print('Targets shape:', targets.shape)
+    print('Weights shape:', weights.shape)    
+    return inputs, targets, weights
+
 
 
 if __name__ == "__main__":
-    preprocess(KERN_DATASET_PATH) 
+    preprocess(TRAINING_SET_PATH) 
     
-    songs = merge_dataset_to_file(ALL_SONGS_DATASET, "dataset.txt")
+    # songs = merge_dataset_to_file(ALL_SONGS_DATASET, "dataset.txt")
     
-    create_mapping(songs, MAPPINGS_PATH)
+    # create_mapping(songs, MAPPINGS_PATH)
     
-    inputs, outputs = generate_training_sequences(SEQUENCE_LENGTH)
-    
+    inputs, outputs, weights = generate_training_sequences(SEQUENCE_LENGTH)
